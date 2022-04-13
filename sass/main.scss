@@ -1,0 +1,197 @@
+$color-primary-light: #7ed56f;
+$color-primary: #55c57a;
+$color-primary-dark: #28b485;
+
+*,
+*::after,
+*::before {
+  /* Global reset */
+
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  //Inherit from body (This is considered best practice)
+}
+
+html {
+  //root font size is set here
+  font-size: 62.5%;
+  // This makes the font size 10px as the default is 16px
+}
+
+body {
+  padding: 3rem;
+
+  box-sizing: border-box;
+  /* so that paddings and borders arent added to the size of the element */
+
+  /* All of the following properties will be inherited by all the child elements */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  height: 95vh;
+  /* Will take up 95 percent of the viewport height */
+  background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.877),
+      rgba($color-primary-dark, 0.855)
+    ),
+    url(../img/hero.jpg);
+  /* Putting two background images over each other, the first one is the top one, so we reduce its opacity to make
+      the second one visible */
+  background-size: cover;
+  /* Whatever the width of the viewport or the parent is, it will take up the entire space */
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Is used to clip an element by specifying which coordinates our element should be visible in, go in clockwise direction
+    starting from top-left*/
+  position: relative;
+  /* So that our headers,image and "discover more" button can be absolute */
+}
+
+.logo-box {
+  /* This is the container for our image and we can position this absolutely in our header which is our parent */
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.logo {
+  height: 3.5rem;
+  /* Width is automatically figured out by browser */
+}
+
+.text-box {
+  /* This is the container for our headers and button and we can position this absolutely in our header which is our parent */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* The above two are in relation to the parent element */
+  transform: translate(-50%, -50%);
+  /* Shifting the text box to -50 percent its OWN width and height to make it appear in the center */
+  text-align: center;
+  /* Since the button (anchor tag) is an inline block element it is treated as text so we can align it in the center by just
+    saying text align */
+}
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+}
+
+.heading-primary-main {
+  /* since span is an inline element and we want our heading lines to be one after the other
+    we can change its display to block to make it act like a block level element */
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft 1s;
+
+  backface-visibility: hidden;
+  /* To stop the shakiness of animations */
+}
+
+.heading-primary-sub {
+  /* since span is an inline element and we want our heading lines to be one after the other
+    we can change its display to block to make it act like a block level element */
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  animation: moveInRight 1s;
+
+  backface-visibility: hidden;
+  /* To stop the shakiness of animations */
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  /* Display of inline block makes it take up the space of an inline element but still 
+    we can apply the box model */
+  transition: all 0.3s;
+  /* The transition property has to be applied on the default state or parent state */
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* Offset in x, Offset in y ,blur-amount, colour */
+}
+
+.btn:active {
+  /* Clicked state */
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /* Offset in x, Offset in y ,blur-amount, colour */
+}
+
+.btn-white {
+  color: #777;
+  background-color: white;
+}
+
+.btn-animated {
+  animation: fadeIn 2s;
+}
+
+/* To create custom animations */
+
+/* For browser performance its best to animate opacity and the transform properties */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* Animation for our button */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pseudo elements allows us to potentially create virtual elements so, the after pseudo element
+  acts like an element after the one we have currently selected even though there is nothing
+  like that in our markup */
