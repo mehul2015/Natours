@@ -8,13 +8,13 @@
     ),
     url(../img/hero.jpg);
   /* Putting two background images over each other, the first one is the top one, so we reduce its opacity to make
-        the second one visible */
+          the second one visible */
   background-size: cover;
   /* Whatever the width of the viewport or the parent is, it will take up the entire space */
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* Is used to clip an element by specifying which coordinates our element should be visible in, go in clockwise direction
-      starting from top-left*/
+        starting from top-left*/
   position: relative;
   /* So that our headers,image and "discover more" button can be absolute */
 }
@@ -41,9 +41,45 @@
   /* Shifting the text box to -50 percent its OWN width and height to make it appear in the center */
   text-align: center;
   /* Since the button (anchor tag) is an inline block element it is treated as text so we can align it in the center by just
-      saying text align */
+        saying text align */
 }
 
 /* Pseudo elements allows us to potentially create virtual elements so, the after pseudo element
-    acts like an element after the one we have currently selected even though there is nothing
-    like that in our markup */
+      acts like an element after the one we have currently selected even though there is nothing
+      like that in our markup */
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  //   To move the grey background of the about section up
+  height: 95vh;
+}
+
+.section-features {
+  background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../../img/nat-4.jpg);
+  height: 95vh;
+  background-size: cover;
+  padding: 20rem 0;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+  margin-bottom: 10rem;
+
+  & > * {
+    //Selecting all the direct children of section features, basically the row
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  text-align: center;
+  height: 95vh;
+  background-color: $color-grey-light-1;
+  padding: 20rem 0;
+  margin-top: -20rem;
+}
