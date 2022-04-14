@@ -9,7 +9,7 @@
     we can apply the box model */
   transition: all 0.3s;
   /* The transition property has to be applied on the default state or parent state */
-  font-size: 1.6rem;
+  font-size: $default-font-size;
 }
 
 .btn:hover {
@@ -32,4 +32,31 @@
 
 .btn-animated {
   animation: fadeIn 2s;
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    padding: 0.3rem;
+    font-size: $default-font-size;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    //Since our button is an a tag, if we dont specify it as inline block we cannot
+    //translate it in top and bottom direction as it wont be a box.
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $color-primary;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
 }

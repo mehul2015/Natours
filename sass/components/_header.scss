@@ -44,38 +44,6 @@
       saying text align */
 }
 
-.heading-primary {
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-}
-
-.heading-primary-main {
-  /* since span is an inline element and we want our heading lines to be one after the other
-      we can change its display to block to make it act like a block level element */
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1s;
-
-  backface-visibility: hidden;
-  /* To stop the shakiness of animations */
-}
-
-.heading-primary-sub {
-  /* since span is an inline element and we want our heading lines to be one after the other
-      we can change its display to block to make it act like a block level element */
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.7rem;
-  animation: moveInRight 1s;
-
-  backface-visibility: hidden;
-  /* To stop the shakiness of animations */
-}
-
 /* Pseudo elements allows us to potentially create virtual elements so, the after pseudo element
     acts like an element after the one we have currently selected even though there is nothing
     like that in our markup */
