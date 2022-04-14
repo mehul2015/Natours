@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  /* Global reset */
+
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  //Inherit from body (This is considered best practice)
+}
+
+html {
+  //root font size is set here
+  font-size: 62.5%;
+  // This makes the font size 10px as the default is 16px
+}
+
+body {
+  padding: 3rem;
+
+  box-sizing: border-box;
+  /* so that paddings and borders arent added to the size of the element */
+
+  /* All of the following properties will be inherited by all the child elements */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+}

@@ -1,0 +1,35 @@
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  /* Display of inline block makes it take up the space of an inline element but still 
+    we can apply the box model */
+  transition: all 0.3s;
+  /* The transition property has to be applied on the default state or parent state */
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* Offset in x, Offset in y ,blur-amount, colour */
+}
+
+.btn:active {
+  /* Clicked state */
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /* Offset in x, Offset in y ,blur-amount, colour */
+}
+
+.btn-white {
+  color: #777;
+  background-color: white;
+}
+
+.btn-animated {
+  animation: fadeIn 2s;
+}
