@@ -48,6 +48,14 @@ body {
   100% {
     opacity: 1; } }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0.4rem); }
+  50% {
+    transform: translateX(-0.4rem); }
+  75% {
+    transform: translateX(0.4rem); } }
+
 .heading-primary {
   color: white;
   text-transform: uppercase;
@@ -192,6 +200,24 @@ body {
   overflow-x: hidden;
   background: rgba(255, 255, 255, 0.86); }
 
+.section-booking {
+  background: linear-gradient(to right, #7ed56f, #28b485);
+  padding: 15rem 0; }
+
+.book {
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 60%), url(../img/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.46);
+  padding: 2rem;
+  max-width: 114rem;
+  margin: 0 auto; }
+  .book-form {
+    width: 50%;
+    padding: 5rem;
+    height: 100%; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -214,29 +240,27 @@ body {
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
-.btn:link,
-.btn:visited {
+.btn {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   border-radius: 10rem;
   display: inline-block;
-  /* Display of inline block makes it take up the space of an inline element but still 
-    we can apply the box model */
+  border: none;
   transition: all 0.3s;
-  /* The transition property has to be applied on the default state or parent state */
   font-size: 1.6rem; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /* Offset in x, Offset in y ,blur-amount, colour */ }
-
-.btn:active {
-  /* Clicked state */
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* Offset in x, Offset in y ,blur-amount, colour */ }
+  .btn-form {
+    font-size: 1.2rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* Offset in x, Offset in y ,blur-amount, colour */
+    cursor: pointer; }
+  .btn:active {
+    /* Clicked state */
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* Offset in x, Offset in y ,blur-amount, colour */ }
 
 .btn-white {
   color: #777;
@@ -423,7 +447,8 @@ body {
   transform: skew(-7deg);
   border-radius: 3px;
   box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.4);
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-bottom: 4rem; }
   .story-shape {
     width: 15rem;
     height: 15rem;
@@ -459,3 +484,55 @@ body {
 
 .story > * {
   transform: skew(7deg); }
+
+.form-group-radio {
+  width: 48%;
+  display: inline-block; }
+  .form-group-radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem; }
+  .form-group-radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #7ed56f;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0; }
+    .form-group-radio-button::after {
+      content: '';
+      height: 1.3rem;
+      width: 1.3rem;
+      background-color: #7ed56f;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0; }
+  .form-group-radio-input {
+    display: none; }
+  .form-group-radio-input:checked ~ .form-group-radio-label .form-group-radio-button::after {
+    opacity: 1; }
+
+.form-input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-family: inherit;
+  font-weight: 300;
+  width: 100%; }
+  .form-input:focus:invalid {
+    outline: 1px solid #ffb900; }
+  .form-input:focus:valid {
+    outline: 1px solid #7ed56f; }
+  .form-input:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .form-input:focus {
+    outline: 1px solid #ffb900;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }

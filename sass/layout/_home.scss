@@ -90,3 +90,35 @@
   overflow-x: hidden;
   background: rgba($color: white, $alpha: 0.86);
 }
+
+.section-booking {
+  background: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  padding: 15rem 0;
+}
+
+.book {
+  background: linear-gradient(
+      105deg,
+      rgba(white, 0.9) 0%,
+      rgba(white, 0.9) 60%,
+      rgba(white, 0) 60%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.46);
+  padding: 2rem;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &-form {
+    width: 50%;
+    padding: 5rem;
+    height: 100%;
+  }
+}

@@ -1,0 +1,83 @@
+.form {
+  &-group {
+    &-radio {
+      width: 48%;
+      //To put it side by side
+      display: inline-block;
+
+      &-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4rem;
+      }
+
+      &-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary-light;
+        border-radius: 50%;
+
+        //This is how you can make a circle in css
+
+        display: inline-block;
+        position: absolute;
+        left: 0;
+
+        &::after {
+          content: '';
+          height: 1.3rem;
+          width: 1.3rem;
+          background-color: $color-primary-light;
+          border-radius: 50%;
+          display: block;
+          position: absolute;
+          //Centering trick
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+      }
+
+      &-input {
+        display: none;
+      }
+      &-input:checked ~ &-label &-button::after {
+        //when the input is checked find the label and the button inside it
+        opacity: 1;
+      }
+    }
+  }
+
+  //There is no way for us to style radio buttons in CSS. So, we have to build our own buttons
+
+  &-input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    //Give more on the sides for input elements, makes it look nice
+    border-radius: 2px;
+    background-color: rgba(white, 0.5);
+    border: none;
+    font-family: inherit;
+    font-weight: 300;
+    width: 100%;
+
+    &:focus:invalid {
+      outline: 1px solid $color-secondary-light;
+    }
+
+    &:focus:valid {
+      outline: 1px solid $color-primary-light;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    &:focus {
+      outline: 1px solid $color-secondary-light;
+      box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+}
