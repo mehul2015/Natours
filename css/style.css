@@ -186,6 +186,12 @@ body {
   padding: 20rem 0;
   margin-top: -20rem; }
 
+.section-testimonials {
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.86); }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -398,3 +404,58 @@ body {
       font-size: 2rem; }
     .card-price-box-value {
       font-size: 6rem; }
+
+.background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1; }
+
+.story {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 6rem;
+  width: 75%;
+  transform: skew(-7deg);
+  border-radius: 3px;
+  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.4);
+  margin: 0 auto; }
+  .story-shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    margin-right: 4rem;
+    position: relative; }
+  .story-image {
+    height: 100%;
+    transition: all 0.6s;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden; }
+  .story-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    font-size: 2rem;
+    color: white;
+    z-index: -1;
+    text-align: center;
+    transition: all 0.6s;
+    backface-visibility: hidden; }
+  .story:hover .story-caption {
+    z-index: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story-image {
+    transform: scale(1);
+    filter: blur(0.2rem); }
+
+.story > * {
+  transform: skew(7deg); }
