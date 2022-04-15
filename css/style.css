@@ -7,7 +7,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   padding: 3rem;
@@ -50,11 +51,11 @@ body {
 
 @keyframes shake {
   0% {
-    transform: translateX(0.4rem); }
+    transform: translateX(0.001rem); }
   50% {
-    transform: translateX(-0.4rem); }
+    transform: translateX(-0.001rem); }
   75% {
-    transform: translateX(0.4rem); } }
+    transform: translateX(0.001rem); } }
 
 .heading-primary {
   color: white;
@@ -189,9 +190,9 @@ body {
 
 .section-tours {
   text-align: center;
-  height: 100vh;
+  height: 120vh;
   background-color: #f7f7f7;
-  padding: 20rem 0;
+  padding: 30rem;
   margin-top: -20rem; }
 
 .section-testimonials {
@@ -239,6 +240,85 @@ body {
     width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.navigation {
+  position: relative; }
+  .navigation-checkbox {
+    display: none; }
+  .navigation-button {
+    background-color: white;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3); }
+  .navigation-background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-image: radial-gradient(#7ed56f, #28b485);
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 1;
+    transition: all 0.5s; }
+  .navigation-nav {
+    height: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    width: 0; }
+  .navigation-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 300; }
+  .navigation-item {
+    margin: 3rem; }
+  .navigation-link:link, .navigation-link:visited {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem 2rem;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 300%;
+    transition: all 0.6s; }
+  .navigation-link:hover {
+    background-position: 100%;
+    color: #7ed56f;
+    border-radius: 3px; }
+  .navigation :hover {
+    cursor: pointer; }
+  .navigation-checkbox:checked ~ .navigation-nav {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    animation: moveInLeft 0.7s; }
+  .navigation-checkbox:checked ~ .navigation-background {
+    transform: scale(80); }
+
+.hamburger {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .hamburger:hover {
+    scale: 0.98; }
+
+.line {
+  width: 3rem;
+  background-color: rgba(128, 128, 128, 0.6);
+  height: 0.3rem;
+  margin: 0.7rem; }
 
 .btn {
   text-transform: uppercase;

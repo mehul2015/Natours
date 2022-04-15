@@ -16,7 +16,46 @@
   </head>
 
   <body>
-    <header class="header">
+    <div class="navigation">
+      <input
+        type="checkbox"
+        class="navigation-checkbox"
+        id="navigation-toggle"
+      />
+      <label for="navigation-toggle" class="navigation-button">
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </label>
+      <!-- The Label will be our button -->
+      <div class="navigation-background">&nbsp;</div>
+      <nav class="navigation-nav">
+        <ol class="navigation-list">
+          <li class="navigation-item">
+            <a href="#header" class="navigation-link">Home</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#about" class="navigation-link">About</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#features" class="navigation-link">Features</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#tours" class="navigation-link">Tours</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#testimonials" class="navigation-link">Testimonials</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#booking" class="navigation-link">Booking</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <header class="header" id="header">
       <!-- Since an image is an inline element, it is best practice to put the image iside a container and then 
         position the container like we want to -->
 
@@ -39,7 +78,7 @@
     </header>
 
     <main>
-      <section class="section-about">
+      <section class="section-about" id="about">
         <div class="u-center-text u-margin-bottom-large">
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
@@ -89,7 +128,7 @@
         </div>
       </section>
 
-      <section class="section-features">
+      <section class="section-features" id="features">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
@@ -134,7 +173,7 @@
         </div>
       </section>
 
-      <section class="section-tours">
+      <section class="section-tours" id="tours">
         <!-- Putting the h2 tag in yet another div -->
 
         <div class="u-center-text u-margin-bottom-large">
@@ -241,7 +280,7 @@
         <a href="#" class="btn btn-green u-margin-top-large">Discover Tours</a>
       </section>
 
-      <section class="section-testimonials">
+      <section class="section-testimonials" id="testimonials">
         <video class="background-video" autoplay loop muted>
           <source src="img/video.mp4" type="video/mp4" />
         </video>
@@ -288,7 +327,7 @@
         </div>
       </section>
 
-      <section class="section-booking">
+      <section class="section-booking" id="booking">
         <div class="book">
           <div class="book-form">
             <form action="#" class="form">
