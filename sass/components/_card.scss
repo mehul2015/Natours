@@ -1,0 +1,181 @@
+.card {
+  height: 52rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  //Since its the parent and we want to absolutely position the card sides
+  &-side {
+    height: 52rem;
+    position: absolute;
+    //To stack the front-side and the back side on top of one another
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    //This makes sure that an element behind an element is hidden
+    // -webkit-backface-visibility: hidden;
+    width: 100%;
+    transition: all 0.8s ease;
+    border-radius: 6px;
+    overflow: hidden;
+    //Because the images are overflowing the card, therefore set the overflow to hidden to see
+    //the border radius appear properly
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.3);
+
+    &-front {
+      background-color: white;
+    }
+
+    &-back {
+      background-color: green;
+      transform: rotateY(180deg);
+      //The back side is already rotated 180 deg before we hover and when we hover
+      //we go back to zero rotation
+
+      &-color-1 {
+        background: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-color-2 {
+        background: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-color-3 {
+        background: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &-side-front {
+    transform: rotateY(-180deg);
+    //When the card is hovered the front side is rotated by 180 deg
+  }
+
+  &:hover &-side-back {
+    transform: rotateY(0);
+    //When the card is hovered the back side is rotated back to zero as it was already
+    //rotated 180 deg before
+  }
+
+  &-picture {
+    position: relative;
+    background-size: cover;
+    height: 23rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    background-blend-mode: soft-light;
+    //the above mode is achieved by trial and error
+    &-1 {
+      background-image: linear-gradient(
+          to right bottom,
+          ($color-secondary-light),
+          ($color-secondary-dark)
+        ),
+        url(../img/nat-5.jpg);
+      //We are only moving up one folder because ultimately our css is going to be served
+      //by the style.css file and the img folder from there is just one level up
+    }
+    &-2 {
+      background-image: linear-gradient(
+          to right bottom,
+          ($color-primary-light),
+          ($color-primary-dark)
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &-3 {
+      background-image: linear-gradient(
+          to right bottom,
+          ($color-tertiary-light),
+          ($color-tertiary-dark)
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &-heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: black;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    color: white;
+  }
+  &-heading-span {
+    padding: 0.75rem 0.5rem;
+    //The following is used to treat the span as if both of the lines are separate divs
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &-1 {
+      background: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+    &-2 {
+      background: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &-3 {
+      background: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &-details {
+    text-transform: capitalize;
+    margin-top: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        padding: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(#f7f7f7, 1);
+        }
+      }
+    }
+  }
+
+  &-cta {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+  &-price-box {
+    font-weight: 200;
+    color: white;
+    &-only {
+      font-size: 2rem;
+    }
+    &-value {
+      font-size: 6rem;
+    }
+  }
+}
